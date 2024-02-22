@@ -1,0 +1,40 @@
+﻿H1: {game} Slots
+Introduction: Set the Stage
+* Start with an engaging hook to immediately capture the reader's attention. This could be a question, a surprising fact about the slot game industry, or an anecdote related to slot games' themes or history.
+* Briefly introduce the slot game, mentioning its developer and its place within the broader context of online gaming.
+H2: Slots Game {game} Theme & Design
+Deep Dive into Theme and Design
+* Discuss the game's theme and how it compares to other slot games with similar themes. Highlight what sets this game apart in terms of its thematic execution and appeal.
+* Describe the design elements (e.g., colors, symbols, animations) in vivid detail, giving the reader a vivid picture of the gaming experience.
+* Mention the audio effects and how they complement the game's visuals.
+H2: {game} Slots Features
+Features Exploration with Examples
+* Elaborate on the game's features, providing scenarios or examples of when these features enhance gameplay. Discuss the impact of these features on the player's experience.
+* Highlight strategic gameplay elements introduced by features like wilds, scatters, or unique mechanics.
+H2: {game} Slot Game Payouts
+Analytical Payouts Section
+* Discuss the game's payout structure and compare it with industry standards. Offer insights into how the game's volatility affects the payout experience.
+* Addition: Include a detailed table of symbols, descriptions, and their payout values, offering readers a comprehensive view of potential winnings.
+* Addition: Include a visual diagram of the game's paylines. Use a table with reels as columns, marking 'X' for payline positions and '-' for non-payline positions, along with a description for each payline to visually demonstrate how wins are determined.
+H2: {game} Slots RTP & Volatility
+RTP & Volatility: Provide Context
+* Explain the Return to Player (RTP) percentage and the game's volatility. Compare these aspects to other popular slot games to give readers a benchmark for what to expect.
+H2: How to Play {game} Slots
+Playing Guide with Insider Tips
+* Offer a simple, step-by-step guide to playing the slot, complemented by insider tips or strategies for enhancing the gaming experience.
+* Addition: Discuss payline strategies, leveraging the visual payline diagram to inform these tactics.
+H2: How to Win at {game} Slots
+Winning Strategies: Add Depth
+* Provide a detailed, in-depth strategy guide that provides clear steps to the reader. This should be aimed at improving the odds of winning significant payouts. This guide should include specific tactics related to bet levels, paylines, and feature utilization, supported by statistical insights where possible.
+* Move beyond general advice to cover game-specific strategies that can make a tangible difference in winning outcomes.
+* Give a direct answer as to the ideal strategy to maximize wins. General advice is not helpful or engaging. The user wants an edge let’s give it to them
+H2: {game} Slots Free Spins
+Discuss Free Spins 
+* explore how the free spins impacts the gameplay and player expectations.
+H2: Pros & Cons
+Pros & Cons: Offer a Balanced View
+* Provide a nuanced discussion of the game's advantages and disadvantages
+* Create a table with a column for pros and a column for cons and include at least 5 pros and cons
+H2: Overall Review
+Overall Review
+* Give an in depth overall review of the slot game. Write it as a person and include examples of emulated first hand experience that share a personal experience with the players and help them see if this game is worth playing
