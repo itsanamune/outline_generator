@@ -14,31 +14,31 @@ def read_template_from_text(file_path):
         full_text = file.read()
     return full_text
 
-def read_placeholder_replacements(file_path):
-    """Reads the placeholder-replacement pairs from a CSV file."""
-    return pd.read_csv(file_path)
-
-def create_outlines_from_template(template, replacements_df):
-    """Creates a complete outline for each game, replacing all placeholders."""
+def create_outlines_from_template(template, games):
+    """Creates a complete outline for each game, replacing placeholders with the game name."""
     outlines = []
-    for index, row in replacements_df.iterrows():
-        updated_outline = template
-        for placeholder, replacement in row.iteritems():
-            if placeholder != 'GameName':  # Skip the GameName column
-                updated_outline = updated_outline.replace(placeholder, replacement)
-        outlines.append({'Outline': updated_outline, 'Game Name': row['GameName']})
+    for game in games:
+        updated_outline = template.replace("{game}", game)
+        outlines.append({'Outline': updated_outline, 'Game Name': game})
     
     outlines_df = pd.DataFrame(outlines)
-    outlines_df.to_excel("OutputFiles/game_outlines.xlsx", index=False)
+    outlines_df.to_excel("OutputFiles/game_outlines.xlsx", index=False, columns=['Outline'])
+
+def read_games_from_excel(file_path):
+    """Reads game names from an Excel file."""
+    df = pd.read_excel(file_path)  # Corrected from pd.read.read_games_from_excel to pd.read_excel
+    games = df.iloc[:, 0].tolist()
+    return games
+
 
 input_dir = 'InputFiles'
-template_file_path = find_first_file(input_dir, '.txt')
-replacements_file_path = find_first_file(input_dir, '.csv')  # Assuming the replacements are in a CSV file
+template_file_path = find_first_file(input_dir, '.txt') # Changed to look for .txt files
+game_names_file_path = find_first_file(input_dir, '.xlsx')
 
-if template_file_path and replacements_file_path:
-    template_outline = read_template_from_text(template_file_path)
-    replacements_df = read_placeholder_replacements(replacements_file_path)
-    create_outlines_from_template(template_outline, replacements_df)
+if template_file_path and game_names_file_path:
+    template_outline = read_template_from_text(template_file_path) # Changed function call to read from .txt
+    games = read_games_from_excel(game_names_file_path)
+    create_outlines_from_template(template_outline, games)
     print("Outlines have been created and saved to game_outlines.xlsx.")
 else:
-    print("Required files (.txt template or .csv with replacements) not found in InputFiles directory.")
+    print("Required files (.txt template or .xlsx with game names) not found in InputFiles directory.")
