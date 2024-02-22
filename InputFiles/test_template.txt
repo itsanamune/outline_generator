@@ -1,0 +1,3 @@
+Welcome to {game}!
+Explore the amazing world and interact with characters like {character}.
+Don't forget to check out {feature}.

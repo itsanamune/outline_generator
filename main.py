@@ -14,21 +14,26 @@ def read_template_from_text(file_path):
         full_text = file.read()
     return full_text
 
-def create_outlines_from_template(template, games):
-    """Creates a complete outline for each game, replacing placeholders with the game name."""
+def create_outlines_from_template(template, data):
     outlines = []
-    for game in games:
-        updated_outline = template.replace("{game}", game)
-        outlines.append({'Outline': updated_outline, 'Game Name': game})
+    for item in data:
+        updated_outline = template
+        for placeholder, replacement in item.items():
+            updated_outline = updated_outline.replace(f"{{{placeholder}}}", replacement)
+        outlines.append({'Outline': updated_outline, 'Game Name': item.get('game', 'N/A')})
     
     outlines_df = pd.DataFrame(outlines)
-    outlines_df.to_excel("OutputFiles/game_outlines.xlsx", index=False, columns=['Outline'])
+    outlines_df.to_excel("OutputFiles/game_outlines.xlsx", index=False)
 
-def read_games_from_excel(file_path):
-    """Reads game names from an Excel file."""
-    df = pd.read_excel(file_path)  # Corrected from pd.read.read_games_from_excel to pd.read_excel
-    games = df.iloc[:, 0].tolist()
-    return games
+
+def read_data_from_excel(file_path):
+    df = pd.read_excel(file_path)
+    data = []
+    placeholders = df.columns.tolist()
+    for index, row in df.iterrows():
+        replacements = row.tolist()
+        data.append(dict(zip(placeholders, replacements)))
+    return data
 
 
 input_dir = 'InputFiles'
@@ -36,9 +41,10 @@ template_file_path = find_first_file(input_dir, '.txt') # Changed to look for .t
 game_names_file_path = find_first_file(input_dir, '.xlsx')
 
 if template_file_path and game_names_file_path:
-    template_outline = read_template_from_text(template_file_path) # Changed function call to read from .txt
-    games = read_games_from_excel(game_names_file_path)
-    create_outlines_from_template(template_outline, games)
+    template_outline = read_template_from_text(template_file_path) # Continue using this line as is
+    data = read_data_from_excel(game_names_file_path)  # Updated to use read_data_from_excel
+    create_outlines_from_template(template_outline, data)  # Correctly using the updated data variable
     print("Outlines have been created and saved to game_outlines.xlsx.")
 else:
     print("Required files (.txt template or .xlsx with game names) not found in InputFiles directory.")
+
