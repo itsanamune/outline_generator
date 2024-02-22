@@ -1,6 +1,4 @@
 # Exclude virtual environment directory
 <<<<<<< HEAD
 venv/
-=======
-venv/
->>>>>>> 457c117c04a9de2cf2b5b09998b385b1460677b3
+

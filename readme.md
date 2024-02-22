@@ -46,6 +46,4 @@ Contributions are welcome! If you have suggestions for improving this script, fe
 
 ## License
 
-Specify the license under which this project is available, such as MIT, GPL, etc.
-
-This README template provides a basic structure. Depending on the project's complexity and specific requirements, additional sections such as 'Running Tests', 'Deployment', and 'Acknowledgments' may be included to provide a comprehensive overview.
+MIT LICENSE
